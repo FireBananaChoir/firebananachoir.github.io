@@ -3,20 +3,35 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>欢迎来到&lt;此处应有名称&gt;合唱团</title>
+  <title>欢迎来到火炎芭蕉合唱团</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  <script src="src/smooth-scroll.polyfills.min.js"></script>
   <link rel="stylesheet" type="text/css" media="screen" href="style/main.css" />
-  <script src="src/main.js"></script>
+  <link rel="stylesheet" type="text/css" media="screen" href="style/root.css" />
 </head>
 <body>
   <div class="bg"></div>
   <div class="bg-cover"></div>
   <div class="body">
-    <div class="top-navigator"></div>
-    <h1>此处应有标题</h1>
-    <div class="tile">
-      <div class="tile-text">点它试试</div>
+    <div class="main-title">
+      <h1>此处应有标题</h1>
+      <h2>Here Should Be a Subtitle</h2>
+    </div>
+    <div id="pagedown">
+      <canvas id="pagedown-canvas" width="50" height="30">V</canvas>
+      <a class="section-link" href="#the-next-page" data-scroll id="pagedown-click"></a>
     </div>
   </div>
+  <div id="next-page"></div>
+  <div id="the-next-page">
+    <span>The next page</span>
+    <p>It's seems that I succeeded.</p>
+    <img src="./assets/background/bg-1.jpg" />
+  </div>
+  <script src="src/main.js"></script>
+  <script>
+    var scroll = new SmoothScroll('a[href*="#"]')
+  </script>
 </body>
 </html>
