@@ -1,1 +1,4 @@
 .vscode/
+node/
+server/
+main.js
