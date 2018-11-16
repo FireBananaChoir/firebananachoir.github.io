@@ -43,27 +43,90 @@ var app = new Vue({
   }
 })
 
-var tiles = [{
-  avatar: 'url(./assets/background/bg-0.jpg)'
+var postInfo = [{
+  avatar: './assets/background/bg-0.jpg',
+  title: '武子骞',
+  excerpt: '',
+  link: ''
 }, {
-  avatar: 'url(./assets/background/bg-1.jpg)'
+  avatar: './assets/background/bg-1.jpg',
+  title: '杨智贻',
+  excerpt: '',
+  link: ''
 }, {
-  avatar: 'url(./assets/background/bg-1.jpg)'
+  avatar: './assets/background/bg-1.jpg',
+  title: '韦宗兴',
+  excerpt: '',
+  link: ''
 }, {
-  avatar: 'url(./assets/background/bg-1.jpg)'
+  avatar: './assets/background/bg-1.jpg',
+  title: '周泽平',
+  excerpt: '',
+  link: ''
 }, {
-  avatar: 'url(./assets/background/bg-1.jpg)'
+  avatar: './assets/background/bg-1.jpg',
+  title: '赵天扬',
+  excerpt: '',
+  link: ''
 }, {
-  avatar: 'url(./assets/background/bg-1.jpg)'
+  avatar: './assets/background/bg-1.jpg',
+  title: '邓雅琳',
+  excerpt: '',
+  link: ''
 }, {
-  avatar: 'url(./assets/background/bg-1.jpg)'
+  avatar: './assets/background/bg-1.jpg',
+  title: '董锦红',
+  excerpt: '',
+  link: ''
 }, {
-  avatar: 'url(./assets/background/bg-1.jpg)'
+  avatar: './assets/background/bg-1.jpg',
+  title: '徐佳荣',
+  excerpt: '',
+  link: ''
 }, {
-  avatar: 'url(./assets/background/bg-2.jpg)'
+  avatar: './assets/background/bg-1.jpg',
+  title: '徐佳荣',
+  excerpt: '',
+  link: ''
+}, {
+  avatar: './assets/background/bg-2.jpg',
+  title: '王天一',
+  excerpt: '',
+  link: ''
 }]
 
-function drawTiles() {
+function createPostCard(imageUrl, title, excerpt, pageLink) {
+  var cardArticle = document.createElement('article')
+  var imageLinkA = document.createElement('a')
+  var imageDiv = document.createElement('div')
+  var contentLinkA = document.createElement('a')
+  var contentDiv = document.createElement('div')
+  var titleH2 = document.createElement('h2')
+  var excerptSection = document.createElement('section')
+  var excerptP = document.createElement('p')
+  cardArticle.classList.add('post-card')
+  imageLinkA.classList.add('post-card-image-link')
+  imageLinkA.href = pageLink
+  imageDiv.classList.add('post-card-image')
+  imageDiv.style.backgroundImage = `url(${imageUrl})`
+  contentLinkA.classList.add('post-card-content-link')
+  contentLinkA.href = pageLink
+  contentDiv.classList.add('post-card-content')
+  titleH2.classList.add('post-card-title')
+  titleH2.innerHTML = title
+  excerptSection.classList.add('post-card-excerpt')
+  excerptP.innerHTML = excerpt
+  cardArticle.appendChild(imageLinkA)
+  cardArticle.appendChild(contentLinkA)
+  imageLinkA.appendChild(imageDiv)
+  contentLinkA.appendChild(contentDiv)
+  contentDiv.appendChild(titleH2)
+  contentDiv.appendChild(excerptSection)
+  excerptSection.appendChild(excerptP)
+  return cardArticle
+}
+
+function drawPosts() {
   var width = window.screen.width
   var height = window.screen.height
   var size = 200
@@ -84,33 +147,34 @@ function drawTiles() {
   var unitSize = size + 50
   var numberInLine = Math.floor(width / unitSize)
 
+  var postList = []
   var nav = document.getElementById('navigator-page')
-  var tileList = []
-  for (var i = 0; i < tiles.length; i++) {
-    var tile = tiles[i]
-    var tileDiv = document.createElement('div')
-    tileDiv.classList.add('tile')
-    tileDiv.style.width = `${size}px`
-    tileDiv.style.height = `${size}px`
-    tileDiv.style.backgroundImage = tile.avatar
-    tileList.push(tileDiv)
+  for (var i = 0; i < postInfo.length; i++) {
+    var post = postInfo[i]
+    var postImageUrl = post.avatar
+    var postTitle = post.title
+    var postExcerpt = post.excerpt
+    var postPageLink = post.link
+    var postCard = createPostCard(postImageUrl, postTitle, postExcerpt, postPageLink)
+    nav.appendChild(postCard)
+    postList.push(postCard)
     if ((i + 1) % numberInLine === 0) {
-      var tileLineDiv = document.createElement('div')
-      tileLineDiv.classList.add('tile-line')
+      var postLineDiv = document.createElement('div')
+      postLineDiv.classList.add('post-card-line')
       for (var j = 0; j < numberInLine; j++) {
-        tileLineDiv.appendChild(tileList[j])
+        postLineDiv.appendChild(postList[j])
       }
-      nav.appendChild(tileLineDiv)
-      tileList = []
+      nav.appendChild(postLineDiv)
+      postList = []
     }
   }
-  tileLineDiv = document.createElement('div')
-  tileLineDiv.classList.add('tile-line')
-  for (var j = 0; j < tileList.length; j++) {
-    tileLineDiv.appendChild(tileList[j])
+  postLineDiv = document.createElement('div')
+  postLineDiv.classList.add('post-card-line')
+  for (var j = 0; j < postList.length; j++) {
+    postLineDiv.appendChild(postList[j])
   }
-  nav.appendChild(tileLineDiv)
+  nav.appendChild(postLineDiv)
 }
 
 drawDown()
-drawTiles()
+drawPosts()
