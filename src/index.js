@@ -1,10 +1,12 @@
-function linkPortable() {
-  if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
-    if (window.location.href === './index-portable.html') {
-      window.location.href = ''
-    }
+function testTransform() {
+  var n = document.getElementsByTagName('body')[0]
+  if ((n.style.transform != null || n.style.webkitTransform != null)
+  && (n.style.transition != null || n.style.webkitTransition != null)) {
+  } else {
+    var p = document.getElementsByClassName('flip-container')[0]
+    var c = p.children[2]
+    p.removeChild(c)
   }
-  window.location.href = ''
 }
 
 function getAQuot() {
@@ -45,52 +47,17 @@ var app = new Vue({
 
 var postInfo = [{
   avatar: './assets/background/bg-0.jpg',
-  title: '武子骞',
+  title: '介绍',
   excerpt: '',
   link: ''
 }, {
   avatar: './assets/background/bg-1.jpg',
-  title: '杨智贻',
+  title: '导师制',
   excerpt: '',
-  link: ''
-}, {
-  avatar: './assets/background/bg-1.jpg',
-  title: '韦宗兴',
-  excerpt: '',
-  link: ''
-}, {
-  avatar: './assets/background/bg-1.jpg',
-  title: '周泽平',
-  excerpt: '',
-  link: ''
-}, {
-  avatar: './assets/background/bg-1.jpg',
-  title: '赵天扬',
-  excerpt: '',
-  link: ''
-}, {
-  avatar: './assets/background/bg-1.jpg',
-  title: '邓雅琳',
-  excerpt: '',
-  link: ''
-}, {
-  avatar: './assets/background/bg-1.jpg',
-  title: '董锦红',
-  excerpt: '',
-  link: ''
-}, {
-  avatar: './assets/background/bg-1.jpg',
-  title: '徐佳荣',
-  excerpt: '',
-  link: ''
-}, {
-  avatar: './assets/background/bg-1.jpg',
-  title: '徐佳荣',
-  excerpt: '',
-  link: ''
+  link: './tutor/index.html'
 }, {
   avatar: './assets/background/bg-2.jpg',
-  title: '王天一',
+  title: '联系我们',
   excerpt: '',
   link: ''
 }]
@@ -176,5 +143,6 @@ function drawPosts() {
   nav.appendChild(postLineDiv)
 }
 
+testTransform()
 drawDown()
 drawPosts()

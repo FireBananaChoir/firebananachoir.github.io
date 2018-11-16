@@ -41,6 +41,7 @@
   display: block;
   padding: 25px 25px 0;
   color: var(--darkgrey);
+  text-decoration: none;
 }
 
 .post-card-content-link:hover {

@@ -27,8 +27,8 @@ var quots = {
     },
     {
       "literal": "圈圈、囧囧、邓邓、阿阿。",
-      "source": "来自合唱团 Flour 4",
-      "link": "./quots/flour-4.html"
+      "source": "来自合唱团 Flower 4",
+      "link": "./quots/flower-4.html"
     },
     {
       "literal": "每一个蝴蝶都是花的鬼魂，回来寻找它前世的身。",
