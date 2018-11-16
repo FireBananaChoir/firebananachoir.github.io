@@ -7,16 +7,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
   <script src="src/smooth-scroll.polyfills.min.js"></script>
+  <script src="src/quots.js"></script>
+  <script src="src/index-first.js"></script>
   <link rel="stylesheet" type="text/css" media="screen" href="style/main.css" />
   <link rel="stylesheet" type="text/css" media="screen" href="style/root.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="style/tile.css" />
 </head>
 <body>
   <div class="bg"></div>
   <div class="bg-cover"></div>
-  <div class="body">
+  <div id="app" class="body">
     <div class="main-title">
-      <h1>西交合唱团</h1>
-      <h2>A Choir That Has Its Own Website</h2>
+      <div class="flip-container">
+        <h1 class="front">SUMBANANA</h1>
+        <h1 class="back">夏蕉合唱团</h1>
+      </div>
+      <h2>西安交大唯一指定合唱团</h2>
+    </div>
+    <div id="quots-div">
+      <div id="quots-containing-div" @click="quotLink">
+        <p id="quots-literal">{{ theQuot.literal }}</p>
+        <p id="quots-source">{{ theQuot.source }}</p>
+      </div>
     </div>
     <div id="pagedown">
       <canvas id="pagedown-canvas" width="50" height="30">V</canvas>
@@ -25,13 +37,10 @@
   </div>
   <div id="next-page"></div>
   <div id="the-next-page">
-    <div id="navigator-page">
-      <nav id="navigator"></nav>
-      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <div id="navigator-page" class="dark">
     </div>
   </div>
-  <script src="src/main.js"></script>
+  <script src="src/index-after.js"></script>
   <script>
     var scroll = new SmoothScroll('a[href*="#"]')
   </script>
