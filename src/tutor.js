@@ -102,6 +102,7 @@ function drawPosts() {
   var unitSize = size + 50
   var numberInLine = Math.floor(width / unitSize)
 
+  postInfo.sort(() => Math.random() - 0.5)
   var postList = []
   var nav = document.getElementById('navigator')
   for (var i = 0; i < postInfo.length; i++) {
