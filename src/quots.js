@@ -2,7 +2,7 @@ var quots = {
   "quotations": [
     {
       "literal": "Would you capture it, or just let it slip?",
-      "source": "Eminem - <i>Lose Yourself</i>",
+      "source": "Eminem - Lose Yourself",
       "link": "./quots/lose-yourself.html"
     },
     {

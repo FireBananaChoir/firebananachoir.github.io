@@ -4,7 +4,7 @@ function testTransform() {
   && (n.style.transition != null || n.style.webkitTransition != null)) {
   } else {
     var p = document.getElementsByClassName('flip-container')[0]
-    var c = p.children[2]
+    var c = p.children[1]
     p.removeChild(c)
   }
 }
@@ -48,18 +48,18 @@ var app = new Vue({
 var postInfo = [{
   avatar: './assets/background/bg-0.jpg',
   title: '介绍',
-  excerpt: '',
-  link: ''
+  excerpt: '哇！这个合唱团是什么啊？',
+  link: 'https://mp.weixin.qq.com/s/l6bpw1h6qDXTLMInRqvMqA'
 }, {
   avatar: './assets/background/bg-1.jpg',
   title: '导师制',
-  excerpt: '',
-  link: './tutor/index.html'
+  excerpt: '学员们！快来选择你们亲爱的导师吧！',
+  link: './pages/tutor.html'
 }, {
   avatar: './assets/background/bg-2.jpg',
   title: '联系我们',
-  excerpt: '',
-  link: ''
+  excerpt: '想给我们打CALL吗~',
+  link: './pages/contact-us.html'
 }]
 
 function createPostCard(imageUrl, title, excerpt, pageLink) {

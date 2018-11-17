@@ -10,11 +10,20 @@ h2 {
 
 .bg {
   position: fixed;
-  background-image: url(../assets/background/bg-2.jpg);
+  background-image: url(../assets/background/bg-1.jpg);
   background-repeat: repeat;
   background-size: cover;
 }
 
+.bg-cover {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
 .subpage-blur-bg {
-  background-image: url(../assets/background/bg-2.jpg);
+  background-image: url(../assets/background/bg-1.jpg);
+}
+
+.post-card {
+  max-width: 300px;
 }

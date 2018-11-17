@@ -1,50 +1,85 @@
 var postInfo = [{
-  avatar: '../assets/background/bg-0.jpg',
+  avatar: '../assets/photos/wzq.png',
   title: '武子骞',
   excerpt: '',
   link: ''
 }, {
-  avatar: '../assets/background/bg-1.jpg',
+  avatar: '../assets/photos/yzy.png',
   title: '杨智贻',
   excerpt: '',
   link: ''
 }, {
-  avatar: '../assets/background/bg-1.jpg',
+  avatar: '../assets/photos/wzx.png',
   title: '韦宗兴',
   excerpt: '',
   link: ''
 }, {
-  avatar: '../assets/background/bg-1.jpg',
+  avatar: '../assets/photos/zzp.png',
   title: '周泽平',
   excerpt: '',
   link: ''
 }, {
-  avatar: '../assets/background/bg-1.jpg',
+  avatar: '../assets/photos/zty.png',
   title: '赵天扬',
   excerpt: '',
   link: ''
 }, {
-  avatar: '../assets/background/bg-1.jpg',
+  avatar: '../assets/photos/dyl.png',
   title: '邓雅琳',
   excerpt: '',
   link: ''
 }, {
-  avatar: '../assets/background/bg-1.jpg',
+  avatar: '../assets/photos/djh.png',
   title: '董锦红',
   excerpt: '',
   link: ''
 }, {
-  avatar: '../assets/background/bg-1.jpg',
+  avatar: '../assets/photos/axy.png',
+  title: '阿雪莹',
+  excerpt: '',
+  link: ''
+}, {
+  avatar: '../assets/photos/xjr.png',
   title: '徐佳荣',
   excerpt: '',
   link: ''
 }, {
-  avatar: '../assets/background/bg-1.jpg',
-  title: '徐佳荣',
+  avatar: '../assets/photos/qfd.png',
+  title: '卿锋镝',
   excerpt: '',
   link: ''
 }, {
-  avatar: '../assets/background/bg-2.jpg',
+  avatar: '../assets/photos/zxj.png',
+  title: '张歆婕',
+  excerpt: '',
+  link: ''
+}, {
+  avatar: '../assets/photos/hyr.png',
+  title: '黄怡然',
+  excerpt: '',
+  link: ''
+}, {
+  avatar: '../assets/photos/lxq.png',
+  title: '李星奇',
+  excerpt: '',
+  link: ''
+}, {
+  avatar: '../assets/photos/crq.png',
+  title: '常芮荃',
+  excerpt: '',
+  link: ''
+}, {
+  avatar: '../assets/photos/lhn.png',
+  title: '刘浩男',
+  excerpt: '',
+  link: ''
+}, {
+  avatar: '../assets/photos/bys.png',
+  title: '保伊莎',
+  excerpt: '',
+  link: ''
+}, {
+  avatar: '../assets/photos/wty.png',
   title: '王天一',
   excerpt: '',
   link: ''
@@ -54,30 +89,30 @@ function createPostCard(imageUrl, title, excerpt, pageLink) {
   var cardArticle = document.createElement('article')
   var imageLinkA = document.createElement('a')
   var imageDiv = document.createElement('div')
-  var contentLinkA = document.createElement('a')
-  var contentDiv = document.createElement('div')
-  var titleH2 = document.createElement('h2')
-  var excerptSection = document.createElement('section')
-  var excerptP = document.createElement('p')
+  // var contentLinkA = document.createElement('a')
+  // var contentDiv = document.createElement('div')
+  // var titleH2 = document.createElement('h2')
+  // var excerptSection = document.createElement('section')
+  // var excerptP = document.createElement('p')
   cardArticle.classList.add('post-card')
   imageLinkA.classList.add('post-card-image-link')
   imageLinkA.href = pageLink
   imageDiv.classList.add('post-card-image')
   imageDiv.style.backgroundImage = `url(${imageUrl})`
-  contentLinkA.classList.add('post-card-content-link')
-  contentLinkA.href = pageLink
-  contentDiv.classList.add('post-card-content')
-  titleH2.classList.add('post-card-title')
-  titleH2.innerHTML = title
-  excerptSection.classList.add('post-card-excerpt')
-  excerptP.innerHTML = excerpt
+  // contentLinkA.classList.add('post-card-content-link')
+  // contentLinkA.href = pageLink
+  // contentDiv.classList.add('post-card-content')
+  // titleH2.classList.add('post-card-title')
+  // titleH2.innerHTML = title
+  // excerptSection.classList.add('post-card-excerpt')
+  // excerptP.innerHTML = excerpt
   cardArticle.appendChild(imageLinkA)
-  cardArticle.appendChild(contentLinkA)
+  // cardArticle.appendChild(contentLinkA)
   imageLinkA.appendChild(imageDiv)
-  contentLinkA.appendChild(contentDiv)
-  contentDiv.appendChild(titleH2)
-  contentDiv.appendChild(excerptSection)
-  excerptSection.appendChild(excerptP)
+  // contentLinkA.appendChild(contentDiv)
+  // contentDiv.appendChild(titleH2)
+  // contentDiv.appendChild(excerptSection)
+  // excerptSection.appendChild(excerptP)
   return cardArticle
 }
 
