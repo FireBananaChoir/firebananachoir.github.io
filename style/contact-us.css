@@ -4,10 +4,11 @@ body {
 
 .bg {
   background-image: url(../assets/background/bg-2.jpg);
+  background-position: 30% 30%;
 }
 
 .bg-cover {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .body {
@@ -22,6 +23,7 @@ body {
 
 .info {
   margin: auto;
+  font-size: 1.5rem;
 }
 
 .copyright {
