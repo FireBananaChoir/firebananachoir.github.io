@@ -31,6 +31,11 @@ var quots = {
       "link": "./quots/flower-4.html"
     },
     {
+      "literal": "难吃，是今晚的，康桥。",
+      "source": "周志摩",
+      "link": "./quots/cambridge.html"
+    },
+    {
       "literal": "每一个蝴蝶都是花的鬼魂，回来寻找它前世的身。",
       "source": "张爱玲《炎樱语录》",
       "link": "./quots/flour-ghost-butterfly.html"
